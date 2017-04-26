@@ -38,14 +38,44 @@ public class Sequence {
             return items[i];
         }
 
+        /**
+         * 返回外部类的引用
+         * @return
+         */
+        public Sequence getOuterClass(){ return Sequence.this;}
+
         public void next() {
             if (i < items.length) i++;
         }
     }
 
+    public boolean check(){
+        return this==((SequenceSelector)selector()).getOuterClass();
+    }
+
     public Selector selector() {
         return new SequenceSelector();
     }
+
+    private class ReverseSequenceSelector implements Selector{
+        private int i=items.length;
+        @Override
+        public boolean end() {
+            return i==0;
+        }
+
+        @Override
+        public Object current() {
+            return items[i-1];
+        }
+
+        @Override
+        public void next() {
+            if (i>0) i--;
+        }
+    }
+
+    public Selector reverseSelector(){return  new ReverseSequenceSelector();}
 
     public static void main(String[] args) {
 //        Sequence sequence = new Sequence(10);
@@ -60,13 +90,23 @@ public class Sequence {
         /**------------------------------------------*/
 
         Sequence sequence = new Sequence(10);
+        System.out.println(sequence.check());
         for (int i = 0; i < 10; i++)
             sequence.add(new P2_classHoldString("str"+i));
         Selector selector = sequence.selector();
+
         while (!selector.end()) {
             System.out.print(selector.current() + " ");
             selector.next();
         }
+        System.out.println("---------------------------------------");
+        //练习题22
+        Selector reverseSelector = sequence.reverseSelector();
+        while (!reverseSelector.end()) {
+            System.out.print(reverseSelector.current() + " ");
+            reverseSelector.next();
+        }
+
 
     }
 } /* Output:
