@@ -1,6 +1,9 @@
 package com.blucewang.chapter18_io.extra;
 
+import com.blucewang.net.mindview.util.TextFile;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,15 +16,24 @@ public class FileTest {
     public static void main(String[] args) {
         //根据当前路径来创建一个File对象
 //        System.out.println(FileTest.class.getResource(""));
-        File file = new File("FileTest");
-
+        File file = new File("src/com/blucewang/chapter18_io/extra/FileTest.java");
+        if(file.exists()){
+            System.out.println("FileTest is exist");
+        }
 //        System.out.println(file.getName());
 //
 //        System.out.println(file.getParent());
 
         System.out.println(file.getAbsoluteFile());
 
-        new Thread(new Runnable() {
+
+        try {
+            System.out.println(file.getCanonicalPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+   /*     new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println("before jdk 8,too much code for too little to do!");
@@ -37,6 +49,6 @@ public class FileTest {
 
         // 使用Java 8的方法引用更方便，方法引用由::双冒号操作符标示，
         // 看起来像C++的作用域解析运算符
-        features.forEach(System.out::println);
+        features.forEach(System.out::println);*/
     }
 }

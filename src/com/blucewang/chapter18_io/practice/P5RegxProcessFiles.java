@@ -1,20 +1,25 @@
-//: net/mindview/util/ProcessFiles.java
-package com.blucewang.net.mindview.util;
+package com.blucewang.chapter18_io.practice;
+
+import com.blucewang.net.mindview.util.Directory;
+import com.blucewang.net.mindview.util.ProcessFiles;
 
 import java.io.File;
 import java.io.IOException;
 
-public class ProcessFiles {
+/**
+ * Created by bluceWang on 2017/5/16.
+ */
+public class P5RegxProcessFiles {
     public interface Strategy {
         void process(File file);
     }
 
-    private Strategy strategy;
-    private String ext;
+    private ProcessFiles.Strategy strategy;
+    private String regx;
 
-    public ProcessFiles(Strategy strategy, String ext) {
+    public P5RegxProcessFiles(ProcessFiles.Strategy strategy, String regx) {
         this.strategy = strategy;
-        this.ext = ext;
+        this.regx = regx;
     }
 
     public void start(String[] args) {
@@ -28,8 +33,7 @@ public class ProcessFiles {
                         processDirectoryTree(fileArg);
                     else {
                         // Allow user to leave off extension:
-                        if (!arg.endsWith("." + ext))
-                            arg += "." + ext;
+                        if(arg.matches(regx))
                         strategy.process(
                                 new File(arg).getCanonicalFile());
                     }
@@ -42,7 +46,7 @@ public class ProcessFiles {
     public void
     processDirectoryTree(File root) throws IOException {
         for (File file : Directory.walk(
-                root.getAbsolutePath(), ".*\\." + ext))
+                root.getAbsolutePath(), ".*\\." + regx))
             strategy.process(file.getCanonicalFile());
     }
 
@@ -54,6 +58,6 @@ public class ProcessFiles {
             public void process(File file) {
                 System.out.println(file);
             }
-        }, "java").start(args);
+        }, "*.java").start(args);
     }
 } /* (Execute to see output) *///:~
