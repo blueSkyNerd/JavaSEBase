@@ -22,6 +22,7 @@ public class P13LineNumberReader {
         while ((s = in.readLine()) != null)
             out.println(in.getLineNumber() + ": " + s);
         out.close();
+        out.close();
         // Show the stored file:
         System.out.println(BufferedInputFile.read(file));
     }
