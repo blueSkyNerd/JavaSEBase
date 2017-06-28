@@ -5,7 +5,7 @@ import com.blucewang.net.mindview.util.OSExecute;
 
 public class OSExecuteDemo {
   public static void main(String[] args) {
-    OSExecute.command("javap OSExecuteDemo");
+    OSExecute.command("javap D:\\soft\\code\\JavaSEBase\\src\\com\\blucewang\\chapter18_io\\OSExecuteDemo.java");
   }
 } /* Output:
 Compiled from "OSExecuteDemo.java"
