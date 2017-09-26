@@ -1,4 +1,4 @@
-package com.blucewang.multiThread.extra;
+package com.blucewang.multiThread.extra.communication;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -7,11 +7,20 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class BlockingQueueTest {
     public static void main(String[] args) throws InterruptedException {
+        /***
+         * 使用
+         */
         ArrayBlockingQueue<String> queue = new ArrayBlockingQueue<>(2);
-        queue.offer("a");
-        queue.offer("b");
+//        queue.offer("a");
+//        queue.offer("b");
+//        System.out.println("continue");
+//        queue.offer("c");
+//        System.out.println("blocking");
+
+        queue.add("a");
+        queue.add("b");
         System.out.println("continue");
-        queue.offer("c");
+        queue.add("c");
         System.out.println("blocking");
     }
 }
