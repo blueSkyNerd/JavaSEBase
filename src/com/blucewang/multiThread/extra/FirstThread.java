@@ -4,7 +4,7 @@ package com.blucewang.multiThread.extra;
  * Created by bluceWang on 2017/6/28.
  */
 public class FirstThread extends Thread {
-    private int i = 100;
+    private int i = 2;
 
     @Override
     public void run() {

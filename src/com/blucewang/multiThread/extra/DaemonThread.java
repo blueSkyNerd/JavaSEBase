@@ -20,6 +20,11 @@ public class DaemonThread extends Thread {
         //守护线程不会跑完，因为唯一的前台主线程会先于守护线程结束，jvm会主动退出
         daemonThread.start();
 
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         for (int i=1;i<100;i++){
             System.out.println(Thread.currentThread().getName()+"主线程值为："+i);
         }

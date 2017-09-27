@@ -16,11 +16,12 @@ public class PassiveReferenceTest {
 }
 
 class SuperClass{
+
+    public static String superVal="SupperClass";
+
     static{
         System.out.println("init SupperClass");
     }
-
-    public static String superVal="SupperClass";
 }
 
 class SubClass extends SuperClass{

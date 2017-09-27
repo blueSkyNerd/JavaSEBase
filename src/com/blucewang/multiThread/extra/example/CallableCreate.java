@@ -1,13 +1,13 @@
-package com.blucewang.multiThread.extra;
+package com.blucewang.multiThread.extra.example;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * Created by bluceWang on 2017/6/28.
+ * Created by blucewang on 2017/9/27.
  */
-public class ThirdThread {
+public class CallableCreate {
     public static void main(String[] args) {
         //创建Callable对象
         FutureTask<Integer> futureTask = new FutureTask<Integer>((Callable<Integer>) () -> {
