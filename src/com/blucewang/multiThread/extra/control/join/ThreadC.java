@@ -14,5 +14,12 @@ public class ThreadC extends Thread{
     @Override
     public void run() {
         threadB.interrupt();
+        while (true){
+            if(this.isInterrupted()){
+                System.out.println("C is interrupted");
+                break;
+            }
+        }
+        System.out.println("c end");
     }
 }

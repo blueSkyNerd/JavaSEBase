@@ -19,5 +19,6 @@ public class JoinException {
         }
         ThreadC threadC = new ThreadC(threadB);
         threadC.start();
+        threadC.interrupt();
     }
 }

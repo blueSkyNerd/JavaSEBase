@@ -6,6 +6,10 @@ package com.blucewang.multiThread.extra;
 public class FirstThread extends Thread {
     private int i = 2;
 
+    static{
+        System.out.println("aaaa");
+    }
+
     @Override
     public void run() {
         while(i>0){
@@ -22,9 +26,11 @@ public class FirstThread extends Thread {
     }
 
     public static void main(String[] args) {
-        FirstThread thread = new FirstThread();
-        new Thread(thread,"线程1").start();
-        new Thread(thread,"线程2").start();
-        thread.interrupt();
+//        FirstThread thread = new FirstThread();
+//        new Thread(thread,"线程1").start();
+//        new Thread(thread,"线程2").start();
+//        thread.interrupt();
+        new FirstThread().start();
+        new FirstThread().start();
     }
 }
