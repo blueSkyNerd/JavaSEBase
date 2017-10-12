@@ -1,4 +1,4 @@
-package com.blucewang.ClassRelate.ClassLoad;
+package com.blucewang.classRelate.classLoad;
 
 import sun.misc.Launcher;
 

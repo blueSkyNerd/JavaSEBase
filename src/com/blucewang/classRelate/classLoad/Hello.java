@@ -1,4 +1,4 @@
-package com.blucewang.ClassRelate.ClassLoad;
+package com.blucewang.classRelate.classLoad;
 
 /**
  * Created by bluceWang on 2017/2/28.
@@ -6,7 +6,7 @@ package com.blucewang.ClassRelate.ClassLoad;
 public class Hello {
     public static void main(String[] args) {
         for (String arg : args){
-            System.out.println("ÔËÐÐhelloµÄ²ÎÊýÊÇ£º"+arg);
+            System.out.println("ï¿½ï¿½ï¿½ï¿½helloï¿½Ä²ï¿½ï¿½ï¿½ï¿½Ç£ï¿½"+arg);
             Hello.class.getClassLoader();
         }
     }
