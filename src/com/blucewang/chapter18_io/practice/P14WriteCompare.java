@@ -7,7 +7,7 @@ import java.util.stream.Stream;
  * Created by bluceWang on 2017/5/19.
  */
 public class P14WriteCompare {
-    private final static String outPutFileName="src\\com\\blucewang\\chapter18_io\\practice\\P14WriteCompare.out";
+    private final static String outPutFileName="src\\com\\blucewang\\chapter18_io\\practice\\P14WriteCompare.txt";
     public static void writeUnBuffer(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         FileOutputStream out = new FileOutputStream(new File(outPutFileName));
@@ -17,7 +17,7 @@ public class P14WriteCompare {
             out.write((s+"\n").getBytes());
         }
         out.close();
-        System.out.println("unBuffer write time:"+(System.currentTimeMillis()-startTime)+"ºÁÃë");
+        System.out.println("unBuffer write time:"+(System.currentTimeMillis()-startTime)+"ï¿½ï¿½ï¿½ï¿½");
     }
 
     public static void writeBuffer(String fileName) throws IOException {
@@ -29,7 +29,7 @@ public class P14WriteCompare {
             out.print(s+"\n");
         }
         out.close();
-        System.out.println("buffer write time:"+(System.currentTimeMillis()-startTime)+"ºÁÃë");
+        System.out.println("buffer write time:"+(System.currentTimeMillis()-startTime)+"ï¿½ï¿½ï¿½ï¿½");
     }
 
     public static void main(String[] args) throws IOException {
