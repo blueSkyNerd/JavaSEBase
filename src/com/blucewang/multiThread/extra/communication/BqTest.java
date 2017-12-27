@@ -6,12 +6,14 @@ import java.util.concurrent.ArrayBlockingQueue;
  * Created by bluceWang on 2017/7/19.
  */
 public class BqTest {
-    public static void main(String[] args) {
-        ArrayBlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(1);
-        new Producer(blockingQueue).start();
-        new Producer(blockingQueue).start();
-        new Producer(blockingQueue).start();
+    private volatile boolean flag ;
 
-        new Consumer(blockingQueue).start();
+    public static void main(String[] args) {
+//        ArrayBlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(1);
+//        new Producer(blockingQueue).start();
+//        new Producer(blockingQueue).start();
+//        new Producer(blockingQueue).start();
+//
+//        new Consumer(blockingQueue).start();
     }
 }

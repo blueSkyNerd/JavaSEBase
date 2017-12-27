@@ -13,10 +13,10 @@ public class ArrayTest {
         String[] strArr = new String[5];
         System.out.println(Arrays.toString(strArr));
 
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a","b","c","ｄ","e","f"));
-        for (String str:
-             list) {
-            if("aa".equals(str)){
+        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "ｄ", "e", "f"));
+        for (String str :
+                list) {
+            if ("aa".equals(str)) {
                 System.out.println(str);
             }
         }
@@ -31,7 +31,7 @@ public class ArrayTest {
         System.out.println(Arrays.toString(list.toArray()));
 
 
-        list.removeAll(new ArrayList<Integer>(){{
+        list.removeAll(new ArrayList<Integer>() {{
             add(1);
         }});
 
@@ -45,3 +45,5 @@ public class ArrayTest {
 
 
 }
+
+
